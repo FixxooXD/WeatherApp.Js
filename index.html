@@ -1,39 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="src/output.css">
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&family=Montserrat:ital,wght@1,500&display=swap" rel="stylesheet">
     <script defer src="src/index.js"></script>
     <title>Weather App</title>
     <style>
-        body{
+        body {
             /* background-image: linear-gradient(to right, #2980B9 , #6DD5FA ,#FFFFFF); */
-                /* background-image: url("./cloud-blue-sky.jpg");
+            /* background-image: url("./cloud-blue-sky.jpg");
                 background-size: 100% ; */
-                overflow: hidden; /* Hide scrollbars */
+            overflow: hidden;
+            /* Hide scrollbars */
+            font-family: 'Comfortaa', cursive;
         }
-        input{
-            text-align: center;
-        }
+        textarea:focus, input:focus{
+    outline: none;
+}
     </style>
 </head>
-<body   >  
+
+<body>
     <div class="absolute border-b-2 w-full">Weather Forecast</div>
-    <div class="Parent-Container flex h-screen justify-center items-center  sm:mb-8">
-        <div class="Content-Box flex flex flex-col  items-center">
-              <input  class="border-2 w-96 h-10 text-xl type="text" name="" id="input">
-              <button class="border-2 w-32 mt-2 text-3xl py-1" type="submit" id="btn">Search</button>
+    <div class="Parent-Container flex h-screen justify-center items-center sm:mb-8 ">
+        <div class="" >
+        <div class="Content-Box flex flex  items-center mb-8">
+            <input class="border-b-2 w-96 h-10 text-xl " type="text" name="" id="input">
+            <button class="border-b-2 w-32 h-10 sm:text-xl py-1" type="submit" id="btn">Set</button>
         </div>
-        <div class="relative">
-        <h1 id="celcius" class="flex justify-center items-center text-8xl w-32 h-32 p-2 ml-14 mb-4">12.8 <span class="text-2xl">℃</span></h1>
+        <div class="relative shadow-2xl rounded-lg flex flex-row-reverse justify-around justify-center items-center  h-48">
+            <h1 id="celcius" class="flex justify-center items-center sm:text-8xl sm:w-32 sm:h-32 p-2 sm:ml-14 mb-4 mt-2 mr-8">12.8
+                <sup class="text-2xl">℃</sup></h1>
+        <div class=" flex flex-col items-center justify-center h-32 mb-4">
+            <img id="conditionImg" class="h-32 w-32 " src="https://cdn.weatherapi.com/weather/64x64/day/122.png"
+                alt="">
+            <span id="condition" class="absolute sm:mt-24 text-xl">Haze</span>
         </div>
-        <div class=" flex flex-col items-center justify-center mb-10 h-32 ml-12">
-       <img id="conditionImg" class="h-24 w-24 p-0 mt-2" src="https://cdn.weatherapi.com/weather/64x64/day/122.png" alt="">
-       <span id="condition" class="absolute mt-24">Haze</span>
+    </div>
     </div>
     </div>
     </div>
 </body>
+
 </html>
