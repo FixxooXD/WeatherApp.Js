@@ -40,3 +40,10 @@ async function getReport() {
     })
     .catch((err) => console.error(err));
 }
+
+input.addEventListener("keypress", function(event) {
+  // If the user presses the "Enter" key on the keyboard
+  if (event.key === "Enter") {
+   getReport();
+  }
+});
