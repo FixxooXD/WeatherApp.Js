@@ -5,6 +5,9 @@ const searchBtn = document.getElementById("btn");
 const degree = document.getElementById("celcius");
 const ConditionImg = document.getElementById("conditionImg");
 const condition = document.getElementById("condition");
+const humidity = document.getElementById('humidity');
+const wind = document.getElementById('wind');
+const uv = document.getElementById('uv');
 
 const city = input.value;
 
@@ -28,10 +31,11 @@ async function getReport() {
   )
     .then((response) => response.json())
     .then((data) => {
-      console.log(data.current);
-      // degree.innerText = `${data.current.temp_c}`;
+      console.log(data);
       degree.innerHTML = `${data.current.temp_c}<span  class="text-xl">℃</span>`;
-      // degree.append = `<h1 id="celcius" class="flex justify-center  items-center text-5xl w-32 h-32 border-2 p-2">${data.current.temp_c}`<span>℃</span></h1>`
+      humidity.innerHTML = `Humidity :<span>${data.current.humidity}%</span>`
+      wind.innerHTML = `Wind : <span>${data.current.wind_kph} km/h</span></div>`
+      uv.innerHTML =`UV : <span>${data.current.uv}</span>`
       return data.current.condition;
     })
     .then((data) => {
