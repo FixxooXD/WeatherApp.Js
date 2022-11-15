@@ -1,3 +1,7 @@
+
+// import dotenv from 'dotenv'
+// dotenv.config()
+// const token = process.env.MY_KEY
 const input = document.getElementById("input");
 const searchBtn = document.getElementById("btn");
 const degree = document.getElementById("celcius");
@@ -9,10 +13,11 @@ const uv = document.getElementById("uv");
 
 const city = input.value;
 const token = config.MY_KEY;
-
+// const  token = process.env.MY_KEY;
+// console.log(token)
 const options = {
   method: "GET",
-  headers: {},
+  headers: {}
 };
 
 searchBtn.addEventListener("click", getReport);
