@@ -12,20 +12,19 @@ const wind = document.getElementById("wind");
 const uv = document.getElementById("uv");
 
 const city = input.value;
-// const token = config.MY_KEY;
+const token = config.MY_KEY;
 // console.log(token)
 const options = {
   method: "GET",
   headers: {}
 };
-
+//  console.log(process.env.MY_KEY)  ;
 searchBtn.addEventListener("click", getReport);
 
 async function getReport() {
-  const MY_KEY = process.env.MY_KEY;
   console.log(city);
   await fetch(
-    `https://api.weatherapi.com/v1/current.json?key=${MY_KEY}&q=${input.value}&aqi=no`
+    `https://api.weatherapi.com/v1/current.json?key=${token}&q=${input.value}&aqi=no`
   )
     .then((response) => response.json())
     .then((data) => {
