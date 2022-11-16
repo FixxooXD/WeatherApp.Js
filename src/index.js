@@ -1,4 +1,4 @@
-
+require('dotenv').config()
 // import dotenv from 'dotenv'
 // dotenv.config()
 // const token = process.env.MY_KEY
@@ -11,20 +11,21 @@ const humidity = document.getElementById("humidity");
 const wind = document.getElementById("wind");
 const uv = document.getElementById("uv");
 
-const city = input.value;
-const token = config.MY_KEY;
-// console.log(token)
+let city = input.value;
+// const token = config.MY_KEY;
+const config= require('../config.json');
+const API_KEY = config.API_KEY;
 const options = {
   method: "GET",
   headers: {}
 };
-//  console.log(process.env.MY_KEY)  ;
 searchBtn.addEventListener("click", getReport);
 
 async function getReport() {
   console.log(city);
+
   await fetch(
-    `https://api.weatherapi.com/v1/current.json?key=${token}&q=${input.value}&aqi=no`
+    `https://api.weatherapi.com/v1/current.json?key=${API_KEY}&q=${input.value}&aqi=no`
   )
     .then((response) => response.json())
     .then((data) => {
