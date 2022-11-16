@@ -22,10 +22,10 @@ const options = {
 searchBtn.addEventListener("click", getReport);
 
 async function getReport() {
-  const  token = process.env.MY_KEY;
+  const MY_KEY = process.env.MY_KEY;
   console.log(city);
   await fetch(
-    `https://api.weatherapi.com/v1/current.json?key=${token}&q=${input.value}&aqi=no`
+    `https://api.weatherapi.com/v1/current.json?key=${MY_KEY}&q=${input.value}&aqi=no`
   )
     .then((response) => response.json())
     .then((data) => {
